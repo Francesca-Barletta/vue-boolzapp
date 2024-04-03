@@ -359,5 +359,8 @@ textarea{
     .contact-list{
         margin-right: 14px;
     }
-   
+  
+}
+.not-visible{
+    display:none;
 }
