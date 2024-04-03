@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            userText:'',
             currentContactindex: 0,
             contacts: [
                 {
@@ -172,7 +173,22 @@ createApp({
         methods:{
         activeContacts(index){
             this.currentContactindex = index;
-        }
+        },
+        addMessage() {
+            if (this.userText !== '') {
+                // Creo l'oggetto da inserire
+                let newMessage = {
+                    date: '10/01/2020 15:50:00',
+                    message: '',
+                    status: 'sent'
+                }
+                // Inserisco nell'oggetto il testo preso da quello inserito dall'utente
+                newMessage.message = this.userText;
+                // Inserisco l'oggetto nell'array
+                this.contacts[0].messages.push(newMessage);
+                this.userText = '';
+            }
+        },
         },
         mounted() {
             console.log(this.contacts[0].messages[0].message)
