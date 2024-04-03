@@ -47,7 +47,7 @@
                     <div class="sidebar-contacts">
 
                         <div class="sidebar-search">
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" />
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat"  v-model="searchContact" />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
@@ -111,7 +111,7 @@
                                 <div class="dropdown">
                                     <a href="#"><i class="fa-solid fa-angle-down"></i></a>
                                     <div class="dropdown-content">
-                                        <p><a href="#">cancella</a></p>
+                                        <p><a href="#" @click="removeMessage(i)">cancella</a></p>
                                         <p><a href="#">condividi</a></p>
                                         <p><a href="#">modifica</a></p>
                         

@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            searchContact:'',
             userText: '',
             currentContactindex: 0,
             contacts: [
@@ -199,6 +200,14 @@ createApp({
             }
             this.contacts[0].messages.push(newAnswer);
             console.log(newAnswer)
+        },
+        removeMessage(i) {
+            this.contacts[0].messages.splice(i, 1);
+            console.log('sto cancellando l elemento')
+        },
+        search(){
+
+
         },
         mounted() {
             console.log(this.contacts[0].messages[0].message)
