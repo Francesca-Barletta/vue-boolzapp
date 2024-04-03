@@ -186,7 +186,7 @@ createApp({
                 // Inserisco nell'oggetto il testo preso da quello inserito dall'utente
                 newMessage.message = this.userText;
                 // Inserisco l'oggetto nell'array
-                this.contacts[0].messages.push(newMessage);
+                this.contacts[this.currentContactindex].messages.push(newMessage);
                 this.userText = '';
                 let autoAnswer = setTimeout(this.answerOk, 1000)
                 
@@ -198,11 +198,11 @@ createApp({
                 message: 'ok',
                 status: 'received'
             }
-            this.contacts[0].messages.push(newAnswer);
+            this.contacts[this.currentContactindex].messages.push(newAnswer);
             console.log(newAnswer)
         },
         removeMessage(i) {
-            this.contacts[0].messages.splice(i, 1);
+            this.contacts[this.currentContactindex].messages.splice(i, 1);
             console.log('sto cancellando l elemento')
         },
         search(){
