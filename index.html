@@ -129,7 +129,7 @@
 
                         <div class="emoticon col-5"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
                         <div class="text-here col-90">
-                            <textarea name="text" cols="90" rows="2" placeholder="Scrivi un messaggio"></textarea>
+                            <textarea name="text" @keydown.enter="addMessage" cols="90" rows="2" placeholder="Scrivi un messaggio" v-model.trim="userText"></textarea>
                         </div>
                         <div class="mic col-5"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
 
