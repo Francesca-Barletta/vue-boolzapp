@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://kit.fontawesome.com/871901a0d5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/app.css">
+    <title>Boolzapp</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container container-lg">
+            <div class="row">
+
+                <!--inizio sidebar-->
+                <section class="sidebar">
+
+                    <!--sidebar-header-->
+                    <div class="sidebar-header flex">
+                        <div class="mine-avatar">
+                            <img class="avatar" src="./img/avatar_io.jpg" alt="">
+                        </div>
+                        <div class="sidebar-nav">
+                            <ul class="flex">
+                                <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--fine sidebar-header inizio message-notification-->
+                    <div class="message-notification">
+                        <div class="notify-bell"><i class="fa-solid fa-bell-slash"></i></div>
+                        <div class="notification">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#">attiva notifiche desktop</a>
+                        </div>
+
+                    </div>
+                    <!--fine message-notification inizio sidebar-contacts-->
+                    <div class="sidebar-contacts">
+
+                        <div class="sidebar-search">
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" />
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <ul class="contact-list">
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Michele</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_2.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Fabio</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_3.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Samuele</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_4.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Alessandro B.</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_5.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Alessandro L.</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_6.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Claudia</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_7.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Federico</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                            <li class="contact-card flex">
+
+                                <div class="contact">
+                                    <img class="avatar" src="./img/avatar_8.jpg" alt="">
+                                </div>
+                                <div class="contact-sidebar-info">
+                                    <div class="contact-name">Davide</div>
+                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                </div>
+                                <div class="last-message-time">16:15</div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!--fine sidebar-contacts-->
+
+
+                </section>
+                <!--fine sidebar-->
+
+                <!--inizio main-->
+                <section class="app-main">
+
+
+                    <!--inizio main nav-->
+                    <section class="main-nav">
+                        <div class="flex">
+                            <div class="flex gap-14">
+                                <div class="chat-avatar">
+                                    <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="avatar-info">
+                                    <div class="avatar-name">Michele</div>
+                                    <div class="avatar-last-access">Ultimo accesso oggi alle 16:26</div>
+                                </div>
+                            </div>
+                            <div class="main-tools">
+                                <ul class="flex">
+                                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></a></i></li>
+                                    <li><a href="#"><i class="fa-solid fa-paperclip"></a></i></li>
+                                    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></a></i></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="chat-area">
+                        <div class="send">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero est similique doloribus
+                                sint, repellendus ad expedita dolores dolore harum ea facere tempore modi repellat
+                                molestias. Impedit numquam asperiores excepturi corporis!</p>
+                            <div class="text-menu">
+                                <div class="dropdown">
+                                    <a href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-content">
+                                        <p><a href="#">cancella</a></p>
+                                        <p><a href="#">condividi</a></p>
+                                        <p><a href="#">modifica</a></p>
+
+                                    </div>
+                                </div>
+                                <span class="timing">16:15</span>
+                            </div>
+                        </div>
+                        <div class="get">
+                            <p>Lorem ipsum</p>
+                            <div class="text-menu">
+                                <div class="dropdown">
+                                    <a class="drop" href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-content">
+                                        <p><a href="#">cancella</a></p>
+                                        <p><a href="#">condividi</a></p>
+                                        <p><a href="#">modifica</a></p>
+
+                                    </div>
+                                </div>
+                                <span class="timing">16:15</span>
+                            </div>
+                        </div>
+                        <div class="get">
+                            <p>Lorem ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            <div class="text-menu">
+                                <div class="dropdown">
+                                    <a class="drop" href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-content">
+                                        <p><a href="#">cancella</a></p>
+                                        <p><a href="#">condividi</a></p>
+                                        <p><a href="#">modifica</a></p>
+
+                                    </div>
+                                </div>
+                                <span class="timing">16:15</span>
+                            </div>
+                        </div>
+                        <div class="send">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. corporis!</p>
+                            <div class="text-menu">
+                                <div class="dropdown">
+                                    <a href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-content">
+                                        <p><a href="#">cancella</a></p>
+                                        <p><a href="#">condividi</a></p>
+                                        <p><a href="#">modifica</a></p>
+
+                                    </div>
+                                </div>
+                                <span class="timing">16:15</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="main-message">
+
+                        <div class="emoticon col-5"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
+                        <div class="text-here col-90">
+                            <textarea name="text" cols="90" rows="2" placeholder="Scrivi un messaggio"></textarea>
+                        </div>
+                        <div class="mic col-5"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
+
+                    </section>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
