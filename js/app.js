@@ -206,11 +206,19 @@ createApp({
             console.log('sto cancellando l elemento')
         },
         search(){
+            if(this.searchContact !== ''){
+                for(let i = 0; i < this.searchContact.length; i++){
+                    let char = this.searchContact[i];
 
+                    if(char !== this.contacts.name[i]){
+                        this.contacts.visible = false;
+                    }
+                }
+            }
 
         },
         mounted() {
-            console.log(this.contacts[0].messages[0].message)
+            console.log(this.contacts[0].messages[0].message);
         }
     }
 }).mount('#app')

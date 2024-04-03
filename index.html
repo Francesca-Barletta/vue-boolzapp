@@ -47,14 +47,15 @@
                     <div class="sidebar-contacts">
 
                         <div class="sidebar-search">
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat"  v-model="searchContact" />
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" @keyup.enter="search" v-model="searchContact" />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
                         <ul class="contact-list">
                             <li class="contact-card flex"
                              v-for="(contact, i) in contacts"
-                             @click="activeContacts(i)">
+                             @click="activeContacts(i)"
+                             :class="contact.visible !== true ? 'not-visible' : ''">
                                 
                                 <div class="contact">
                                     <img class="avatar" :src="contact.avatar" alt="">
@@ -129,7 +130,7 @@
 
                         <div class="emoticon col-5"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
                         <div class="text-here col-90">
-                            <textarea name="text" @keydown.enter="addMessage" cols="90" rows="2" placeholder="Scrivi un messaggio" v-model.trim="userText"></textarea>
+                            <textarea name="text" @keyup.enter="addMessage" cols="90" rows="2" placeholder="Scrivi un messaggio" v-model.trim="userText"></textarea>
                         </div>
                         <div class="mic col-5"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
 
