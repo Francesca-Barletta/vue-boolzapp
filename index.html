@@ -52,102 +52,20 @@
                         </div>
 
                         <ul class="contact-list">
-                            <li class="contact-card flex">
-
+                            <li class="contact-card flex"
+                             v-for="(contact, i) in contacts">
+                                
                                 <div class="contact">
-                                    <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                                    <img class="avatar" :src="contact.avatar" alt="">
                                 </div>
                                 <div class="contact-sidebar-info">
-                                    <div class="contact-name">Michele</div>
+                                    <div class="contact-name">{{contact.name}}</div>
                                     <div class="contact-last-message">Lorem ipsum dolor sit.</div>
                                 </div>
                                 <div class="last-message-time">16:15</div>
 
                             </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_2.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Fabio</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_3.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Samuele</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_4.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Alessandro B.</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_5.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Alessandro L.</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_6.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Claudia</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_7.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Federico</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
-                            <li class="contact-card flex">
-
-                                <div class="contact">
-                                    <img class="avatar" src="./img/avatar_8.jpg" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">Davide</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
+                            
                         </ul>
 
                     </div>
