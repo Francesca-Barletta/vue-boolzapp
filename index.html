@@ -103,11 +103,10 @@
                         </div>
                     </section>
 
-                    <section
-                    v-for="(contact, i) in contacts" class="chat-area"
-                    :class="i !== currentContactindex ? 'not-visible' : ''">
-                        <div class="send">
-                            <p>{{contact.messages}}</p>
+                    <section class="chat-area">
+                    <ul class="block-message">
+                        <li v-for="(messageObject, i) in contacts[currentContactindex].messages" :class="messageObject.status">
+                            <div>{{messageObject.message}}</div>
                             <div class="text-menu">
                                 <div class="dropdown">
                                     <a href="#"><i class="fa-solid fa-angle-down"></i></a>
@@ -115,27 +114,14 @@
                                         <p><a href="#">cancella</a></p>
                                         <p><a href="#">condividi</a></p>
                                         <p><a href="#">modifica</a></p>
-
+                        
                                     </div>
                                 </div>
                                 <span class="timing">16:15</span>
                             </div>
-                        </div>
-                        <div class="get">
-                            <p>{{contact.messages[i]}}</p>
-                            <div class="text-menu">
-                                <div class="dropdown">
-                                    <a class="drop" href="#"><i class="fa-solid fa-angle-down"></i></a>
-                                    <div class="dropdown-content">
-                                        <p><a href="#">cancella</a></p>
-                                        <p><a href="#">condividi</a></p>
-                                        <p><a href="#">modifica</a></p>
-
-                                    </div>
-                                </div>
-                                <span class="timing">16:15</span>
-                            </div>
-                        </div>
+                        </li>
+                    </ul>
+                       
                         
                     </section>
 
