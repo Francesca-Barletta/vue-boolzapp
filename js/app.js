@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            userText:'',
+            userText: '',
             currentContactindex: 0,
             contacts: [
                 {
@@ -169,9 +169,9 @@ createApp({
                 }
             ]
         }
-        },
-        methods:{
-        activeContacts(index){
+    },
+    methods: {
+        activeContacts(index) {
             this.currentContactindex = index;
         },
         addMessage() {
@@ -187,10 +187,21 @@ createApp({
                 // Inserisco l'oggetto nell'array
                 this.contacts[0].messages.push(newMessage);
                 this.userText = '';
+                let autoAnswer = setTimeout(this.answerOk, 1000)
+                
             }
         },
+        answerOk() {
+            let newAnswer = {
+                date: '10/01/2020 15:50:00',
+                message: 'ok',
+                status: 'received'
+            }
+            this.contacts[0].messages.push(newAnswer);
+            console.log(newAnswer)
         },
         mounted() {
             console.log(this.contacts[0].messages[0].message)
-        },
-    }).mount('#app')
+        }
+    }
+}).mount('#app')
