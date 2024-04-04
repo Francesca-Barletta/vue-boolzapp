@@ -366,3 +366,6 @@ textarea{
 .not-visible{
     display:none;
 }
+.active{
+    background-color: #c4c0c09f;
+}

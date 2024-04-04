@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            searchContact:'',
+            searchContact: '',
             userText: '',
             currentContactindex: 0,
             contacts: [
@@ -189,7 +189,7 @@ createApp({
                 this.contacts[this.currentContactindex].messages.push(newMessage);
                 this.userText = '';
                 let autoAnswer = setTimeout(this.answerOk, 1000)
-                
+
             }
         },
         answerOk() {
@@ -205,17 +205,30 @@ createApp({
             this.contacts[this.currentContactindex].messages.splice(i, 1);
             console.log('sto cancellando l elemento')
         },
-        search(){
-            if(this.searchContact !== ''){
-                for(let i = 0; i < this.searchContact.length; i++){
-                    let char = this.searchContact[i];
-
-                    if(char !== this.contacts.name[i]){
-                        this.contacts.visible = false;
+        // filterName() {
+        //     // this.contacts.filter((name)=> this.contacts.name.toLowerCase().includes(searchContact))
+        //     let contactsName = this.contacts.map((el, i, array) => {
+        //         const nome = el.name;
+        //         return nome
+        //     })
+        //     console.log(contactsName)
+        // },
+        search() {
+                if (this.searchContact !== '') {
+                    if (this.contacts[currentContactindex].indexOf(this.searchContact) == - 1) {
+                        this.visible = false
                     }
                 }
+            
+            return this.visible
+        },
+        computed: {
+            currentContact(){
+                return this.contacts[this.currentContactindex]
+            },
+            currentName(){
+                return this.currentContact.name
             }
-
         },
         mounted() {
             console.log(this.contacts[0].messages[0].message);

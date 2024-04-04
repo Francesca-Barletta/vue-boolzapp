@@ -47,7 +47,7 @@
                     <div class="sidebar-contacts">
 
                         <div class="sidebar-search">
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" @keyup.enter="search" v-model="searchContact" />
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" @keyup="" v-model="searchContact" />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
@@ -55,7 +55,7 @@
                             <li class="contact-card flex"
                              v-for="(contact, i) in contacts"
                              @click="activeContacts(i)"
-                             :class="contact.visible !== true ? 'not-visible' : ''">
+                             :class="i === currentContactindex ? 'active' : ''">
                                 
                                 <div class="contact">
                                     <img class="avatar" :src="contact.avatar" alt="">
