@@ -92,15 +92,15 @@
                         <div class="flex">
                             <div class="flex gap-14">
                                 <div class="chat-avatar">
-                                    <img class="avatar" :src="contacts[currentContactindex].avatar" alt="">
+                                    <img class="avatar" :src="currentContact.avatar" alt="">
                                 </div>
                                 <div class="avatar-info">
-                                    <div class="avatar-name">{{ contacts[currentContactindex].name }}</div>
+                                    <div class="avatar-name">{{ currentContact.name }}</div>
                         <ul class="block-message">
                                     <div class="avatar-last-access">Ultimo accesso il 
-                                        {{ contacts[currentContactindex].messages[currentIndex].date.slice(0, 10) }}
+                                        {{ currentContact.messages[currentIndex].date.slice(0, 10) }}
                                          alle 
-                                        {{ contacts[currentContactindex].messages[currentIndex].date.slice(11, 16) }}
+                                        {{ currentContact.messages[currentIndex].date.slice(11, 16) }}
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
 
                     <section class="chat-area">
                         <ul class="block-message">
-                            <li v-for="(messageObject, i) in contacts[currentContactindex].messages"
+                            <li v-for="(messageObject, i) in currentContact.messages"
                                 :class="messageObject.status">
                                 <div>{{messageObject.message}}</div>
                                 <div class="text-menu">

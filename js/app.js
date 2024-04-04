@@ -176,9 +176,6 @@ createApp({
         activeContacts(index) {
             this.currentContactindex = index;
         },
-        activeIndex(i){
-            this.currentIndex = i;
-        },
         addMessage() {
             if (this.userText !== '') {
                 // Creo l'oggetto da inserire
@@ -209,44 +206,41 @@ createApp({
             this.contacts[this.currentContactindex].messages.splice(i, 1);
             console.log('sto cancellando l elemento')
         },
-        // filterName() {
-        //     // this.contacts.filter((name)=> this.contacts.name.toLowerCase().includes(searchContact))
-        //     let contactsName = this.contacts.map((el, i, array) => {
-        //         const nome = el.name;
-        //         return nome
-        //     })
-        //     console.log(contactsName)
-        // },
         search(index) {
             for (let index = 0; index < this.contacts.length; index++) {
-                    
+
                 console.log(this.searchContact);
                 console.log(this.contacts);
                 console.log(this.contacts[index]);
-        
+
                 if (this.contacts[index].name.toUpperCase().includes(this.searchContact.toUpperCase()) == false) {
                     this.contacts[index].visible = false;
                 }
                 console.log(this.contacts[index].visible)
-                
+
             }
         },
-        clearSearch(){
+        clearSearch() {
 
         },
-        // computed: {
-        //     currentContact(){
-        //         return this.contacts[this.currentContactindex]
-        //     },
-        //     currentName(){
-        //         return this.currentContact.name
-        //     },
-        //     currentVisible(){
-        //         return this.currentContact.visible
-        //     },
+    },
+    computed: {
+        currentContact() {
+            return this.contacts[this.currentContactindex]
+        },
+        currentName() {
+            return this.currentContact.name
+        },
+        currentVisible() {
+            return this.currentContact.visible
+        },
+        // filterName() {
+        //     this.contacts.filter((name) => this.currentContact.name.toLowerCase().includes(this.searchContact.toLowerCase()))
+
         // },
-        mounted() {
-            console.log(this.contacts[0].messages[0].message);
-        }
+    },
+    mounted() {
+        console.log(this.contacts[0].messages[0].message);
     }
+
 }).mount('#app')
