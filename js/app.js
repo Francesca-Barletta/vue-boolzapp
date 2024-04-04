@@ -234,10 +234,10 @@ createApp({
         currentVisible() {
             return this.currentContact.visible
         },
-        // filterName() {
-        //     this.contacts.filter((name) => this.currentContact.name.toLowerCase().includes(this.searchContact.toLowerCase()))
+        filterName() {
+            this.contacts.filter((name) => this.currentContact.name.toLowerCase().includes(this.searchContact.toLowerCase()))
 
-        // },
+        },
     },
     mounted() {
         console.log(this.contacts[0].messages[0].message);
