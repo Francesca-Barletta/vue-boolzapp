@@ -63,9 +63,9 @@
                                     </div>
                                     <div class="contact-sidebar-info">
                                         <div class="contact-name">{{contact.name}}</div>
-                                        <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                        <div class="contact-last-message">{{contact.messages[currentContactindex].message.slice(0, 30)}}</div>
                                     </div>
-                                    <div class="last-message-time">16:15</div>
+                                    <div class="last-message-time">{{contact.messages[currentContactindex].date.slice(11, 16)}}</div>
                                 </div>
                             </li>
 
@@ -91,7 +91,12 @@
                                 </div>
                                 <div class="avatar-info">
                                     <div class="avatar-name">{{ contacts[currentContactindex].name }}</div>
-                                    <div class="avatar-last-access">Ultimo accesso oggi alle 16:26</div>
+                        <ul class="block-message">
+                                    <div class="avatar-last-access">Ultimo accesso il 
+                                        {{ contacts[currentContactindex].messages[currentContactindex].date.slice(0, 10) }}
+                                         alle 
+                                        {{ contacts[currentContactindex].messages[currentContactindex].date.slice(11, 16) }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="main-tools">
@@ -120,7 +125,7 @@
 
                                         </div>
                                     </div>
-                                    <span class="timing">16:15</span>
+                                    <span class="timing">{{ messageObject.date.slice(11, 16) }}</span>
                                 </div>
                             </li>
                         </ul>

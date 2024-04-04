@@ -230,33 +230,17 @@ createApp({
         clearSearch(){
 
         },
-        computed: {
-            currentContact(){
-                return this.contacts[this.currentContactindex]
-            },
-            currentName(){
-                return this.currentContact.name
-            },
-            currentVisible(){
-                return this.currentContact.visible
-            },
-        //     search(){
-        //         // if(this.searchContact !== ''){
-        //         //     if(this.currentName.includes(this.searchContact) == false){
-        //         //         this.currentVisible = false
-        //         //         return this.currentVisible
-        //         //     }
-        //         // }
-        //         // for (let i = 0; i < this.contacts.length; i++) {
-                    
-        //         //     console.log(this.searchContact);
-            
-        //         //     if (this.contact[i].name.toUpperCase().includes(this.searchContact.toUpperCase()) == false) {
-        //         //         this.contact[i].visible = false
-        //         //     }console.log(this.contact[i].visible)
-        //         // }
-        //     }
-        },
+        // computed: {
+        //     currentContact(){
+        //         return this.contacts[this.currentContactindex]
+        //     },
+        //     currentName(){
+        //         return this.currentContact.name
+        //     },
+        //     currentVisible(){
+        //         return this.currentContact.visible
+        //     },
+        // },
         mounted() {
             console.log(this.contacts[0].messages[0].message);
         }
