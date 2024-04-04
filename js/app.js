@@ -213,14 +213,22 @@ createApp({
         //     })
         //     console.log(contactsName)
         // },
-        search() {
-                if (this.searchContact !== '') {
-                    if (this.contacts[currentContactindex].indexOf(this.searchContact) == - 1) {
-                        this.visible = false
-                    }
+        search(index) {
+            for (let index = 0; index < this.contacts.length; index++) {
+                    
+                console.log(this.searchContact);
+                console.log(this.contacts);
+                console.log(this.contacts[index]);
+        
+                if (this.contacts[index].name.toUpperCase().includes(this.searchContact.toUpperCase()) == false) {
+                    this.contacts[index].visible = false;
                 }
-            
-            return this.visible
+                console.log(this.contacts[index].visible)
+                
+            }
+        },
+        clearSearch(){
+
         },
         computed: {
             currentContact(){
@@ -228,7 +236,26 @@ createApp({
             },
             currentName(){
                 return this.currentContact.name
-            }
+            },
+            currentVisible(){
+                return this.currentContact.visible
+            },
+        //     search(){
+        //         // if(this.searchContact !== ''){
+        //         //     if(this.currentName.includes(this.searchContact) == false){
+        //         //         this.currentVisible = false
+        //         //         return this.currentVisible
+        //         //     }
+        //         // }
+        //         // for (let i = 0; i < this.contacts.length; i++) {
+                    
+        //         //     console.log(this.searchContact);
+            
+        //         //     if (this.contact[i].name.toUpperCase().includes(this.searchContact.toUpperCase()) == false) {
+        //         //         this.contact[i].visible = false
+        //         //     }console.log(this.contact[i].visible)
+        //         // }
+        //     }
         },
         mounted() {
             console.log(this.contacts[0].messages[0].message);

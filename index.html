@@ -47,27 +47,28 @@
                     <div class="sidebar-contacts">
 
                         <div class="sidebar-search">
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" @keyup="" v-model="searchContact" />
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" @keyup.enter="search"
+                                v-model="searchContact" />
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
                         <ul class="contact-list">
-                            <li class="contact-card flex"
-                             v-for="(contact, i) in contacts"
-                             @click="activeContacts(i)"
-                             :class="i === currentContactindex ? 'active' : ''">
-                                
-                                <div class="contact">
-                                    <img class="avatar" :src="contact.avatar" alt="">
-                                </div>
-                                <div class="contact-sidebar-info">
-                                    <div class="contact-name">{{contact.name}}</div>
-                                    <div class="contact-last-message">Lorem ipsum dolor sit.</div>
-                                </div>
-                                <div class="last-message-time">16:15</div>
-
-                            </li>
+                            <li v-for="(contact, i) in contacts"
+                            @click="activeContacts(i)"
                             
+                            :class="contact.visible !== true ? 'not-visible' : ''">
+                                <div class="contact-card flex" :class="i === currentContactindex ? 'active' : ''">
+                                    <div class="contact">
+                                        <img class="avatar" :src="contact.avatar" alt="">
+                                    </div>
+                                    <div class="contact-sidebar-info">
+                                        <div class="contact-name">{{contact.name}}</div>
+                                        <div class="contact-last-message">Lorem ipsum dolor sit.</div>
+                                    </div>
+                                    <div class="last-message-time">16:15</div>
+                                </div>
+                            </li>
+
                         </ul>
 
                     </div>
@@ -105,32 +106,34 @@
                     </section>
 
                     <section class="chat-area">
-                    <ul class="block-message">
-                        <li v-for="(messageObject, i) in contacts[currentContactindex].messages" :class="messageObject.status">
-                            <div>{{messageObject.message}}</div>
-                            <div class="text-menu">
-                                <div class="dropdown">
-                                    <a href="#"><i class="fa-solid fa-angle-down"></i></a>
-                                    <div class="dropdown-content">
-                                        <p><a href="#" @click="removeMessage(i)">cancella</a></p>
-                                        <p><a href="#">condividi</a></p>
-                                        <p><a href="#">modifica</a></p>
-                        
+                        <ul class="block-message">
+                            <li v-for="(messageObject, i) in contacts[currentContactindex].messages"
+                                :class="messageObject.status">
+                                <div>{{messageObject.message}}</div>
+                                <div class="text-menu">
+                                    <div class="dropdown">
+                                        <a href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                        <div class="dropdown-content">
+                                            <p><a href="#" @click="removeMessage(i)">cancella</a></p>
+                                            <p><a href="#">condividi</a></p>
+                                            <p><a href="#">modifica</a></p>
+
+                                        </div>
                                     </div>
+                                    <span class="timing">16:15</span>
                                 </div>
-                                <span class="timing">16:15</span>
-                            </div>
-                        </li>
-                    </ul>
-                       
-                        
+                            </li>
+                        </ul>
+
+
                     </section>
 
                     <section class="main-message">
 
                         <div class="emoticon col-5"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
                         <div class="text-here col-90">
-                            <textarea name="text" @keyup.enter="addMessage" cols="90" rows="2" placeholder="Scrivi un messaggio" v-model.trim="userText"></textarea>
+                            <textarea name="text" @keyup.enter="addMessage" cols="90" rows="2"
+                                placeholder="Scrivi un messaggio" v-model.trim="userText"></textarea>
                         </div>
                         <div class="mic col-5"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
 
