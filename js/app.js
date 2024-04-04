@@ -6,6 +6,7 @@ createApp({
             searchContact: '',
             userText: '',
             currentContactindex: 0,
+            currentIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +175,9 @@ createApp({
     methods: {
         activeContacts(index) {
             this.currentContactindex = index;
+        },
+        activeIndex(i){
+            this.currentIndex = i;
         },
         addMessage() {
             if (this.userText !== '') {

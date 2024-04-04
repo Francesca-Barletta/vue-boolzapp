@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="luxon.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://kit.fontawesome.com/871901a0d5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/app.css">
@@ -63,9 +64,13 @@
                                     </div>
                                     <div class="contact-sidebar-info">
                                         <div class="contact-name">{{contact.name}}</div>
-                                        <div class="contact-last-message">{{contact.messages[currentContactindex].message.slice(0, 30)}}</div>
+                                        <div class="contact-last-message">
+                                            {{contact.messages[currentIndex].message.slice(0, 30)}}
+                                        </div>
                                     </div>
-                                    <div class="last-message-time">{{contact.messages[currentContactindex].date.slice(11, 16)}}</div>
+                                    <div class="last-message-time">
+                                        {{contact.messages[currentIndex].date.slice(11, 16)}}
+                                    </div>
                                 </div>
                             </li>
 
@@ -93,9 +98,9 @@
                                     <div class="avatar-name">{{ contacts[currentContactindex].name }}</div>
                         <ul class="block-message">
                                     <div class="avatar-last-access">Ultimo accesso il 
-                                        {{ contacts[currentContactindex].messages[currentContactindex].date.slice(0, 10) }}
+                                        {{ contacts[currentContactindex].messages[currentIndex].date.slice(0, 10) }}
                                          alle 
-                                        {{ contacts[currentContactindex].messages[currentContactindex].date.slice(11, 16) }}
+                                        {{ contacts[currentContactindex].messages[currentIndex].date.slice(11, 16) }}
                                     </div>
                                 </div>
                             </div>
