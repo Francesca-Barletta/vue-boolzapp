@@ -226,7 +226,7 @@ createApp({
     },
     computed: {
         currentContact() {
-            return this.contacts[this.currentContactindex]
+            return this.filterName[this.currentContactindex]
         },
         currentName() {
             return this.currentContact.name
@@ -235,12 +235,13 @@ createApp({
             return this.currentContact.visible
         },
         filterName() {
-            this.contacts.filter((name) => this.currentContact.name.toLowerCase().includes(this.searchContact.toLowerCase()))
-
+           return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchContact.toLowerCase()));
         },
     },
     mounted() {
         console.log(this.contacts[0].messages[0].message);
+        console.log(this.filterName)
+        console.log(this.contacts.name)
     }
 
 }).mount('#app')
