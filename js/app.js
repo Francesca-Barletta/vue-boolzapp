@@ -187,21 +187,30 @@ createApp({
                 // Inserisco nell'oggetto il testo preso da quello inserito dall'utente
                 newMessage.message = this.userText;
                 // Inserisco l'oggetto nell'array
-                this.contacts[this.currentContactindex].messages.push(newMessage);
+                const messageNew = this.contacts[this.currentContactindex].messages;
+                messageNew.push(newMessage);
                 this.userText = '';
-                let autoAnswer = setTimeout(this.answerOk, 1000)
+                setTimeout(()=> {
+                    let newAnswer = {
+                        date: '10/01/2020 15:50:00',
+                        message: 'ok',
+                        status: 'received'
+                    }
+                    messageNew.push(newAnswer);
+                    console.log(newAnswer)
+                } ,1000)
 
             }
         },
-        answerOk() {
-            let newAnswer = {
-                date: '10/01/2020 15:50:00',
-                message: 'ok',
-                status: 'received'
-            }
-            this.contacts[this.currentContactindex].messages.push(newAnswer);
-            console.log(newAnswer)
-        },
+        // answerOk() {
+        //     let newAnswer = {
+        //         date: '10/01/2020 15:50:00',
+        //         message: 'ok',
+        //         status: 'received'
+        //     }
+        //     this.messageNew.push(newAnswer);
+        //     console.log(newAnswer)
+        // },
         removeMessage(i) {
             this.contacts[this.currentContactindex].messages.splice(i, 1);
             console.log('sto cancellando l elemento')

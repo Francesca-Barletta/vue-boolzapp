@@ -152,6 +152,7 @@ i {
 .app-main{
     display: flex;
     flex-direction: column;
+    overflow:hidden
 }
 
 .main-message{
@@ -210,6 +211,7 @@ textarea{
     min-width: 100%;
     flex-grow: 1;
     padding: 5% 6%;
+    overflow: scroll;
 }
 .block-message{
     display: flex;
