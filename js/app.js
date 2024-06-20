@@ -198,40 +198,50 @@ createApp({
                     }
                     messageNew.push(newAnswer);
                     console.log(newAnswer)
-                } ,1000)
+                } ,500)
 
             }
         },
-        // answerOk() {
-        //     let newAnswer = {
-        //         date: '10/01/2020 15:50:00',
-        //         message: 'ok',
-        //         status: 'received'
-        //     }
-        //     this.messageNew.push(newAnswer);
-        //     console.log(newAnswer)
-        // },
         removeMessage(i) {
             this.contacts[this.currentContactindex].messages.splice(i, 1);
+            console.log(i)
+            console.log(this.contacts[this.currentContactindex].messages)
             console.log('sto cancellando l elemento')
         },
-        search(index) {
-            for (let index = 0; index < this.contacts.length; index++) {
-
-                console.log(this.searchContact);
-                console.log(this.contacts);
-                console.log(this.contacts[index]);
-
-                if (this.contacts[index].name.toUpperCase().includes(this.searchContact.toUpperCase()) == false) {
-                    this.contacts[index].visible = false;
-                }
-                console.log(this.contacts[index].visible)
-
+        lastDate(array) {
+            let date = '';
+            if(array.length !== 0) {
+                date = array[array.length-1].date
             }
+            return date
         },
-        clearSearch() {
+        lastMessage(array) {
+            let message = '';
+            if(array.length !== 0) {
+                message = array[array.length-1].message
+            }else{
+                message = "non ci sono messaggi";
+            }
+            return message
+        },
+        randomTime(){
 
-        },
+            let hours = Math.floor(Math.random() * 24 + 1);
+            let minutes = Math.floor(Math.random() * 60);
+
+            if(hours < 10){
+                hours = '0' + hours;
+            }
+
+            if(minutes < 10){
+                minutes = '0' + minutes;
+            }
+
+
+            const time = hours + '.' + minutes;
+
+            return time
+        }
     },
     computed: {
         currentContact() {
@@ -246,11 +256,16 @@ createApp({
         filterName() {
            return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.searchContact.toLowerCase()));
         },
+        // removeMessage() {
+        //     let i = this.currentContact
+        //     this.currentContact.messages.splice(i, 1);
+        //     console.log('sto cancellando l elemento')
+        // },
     },
     mounted() {
         console.log(this.contacts[0].messages[0].message);
         console.log(this.filterName)
-        console.log(this.contacts.name)
+       
     }
 
 }).mount('#app')

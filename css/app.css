@@ -193,8 +193,9 @@ textarea{
 .dropdown-content{
     position: absolute;
     display: none;
+    font-size: 13px;
     z-index: 1;
-    background-color: rgba(255, 249, 249, 0.5);
+    background-color: rgba(255, 249, 249, 0.7);
     color: #B1B1B1;
 }
 .dropdown:hover .dropdown-content{

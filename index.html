@@ -48,17 +48,15 @@
                     <div class="sidebar-contacts">
 
                         <div class="sidebar-search">
-                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" 
+                            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat"
                                 v-model="searchContact" />
                             <i class="fa-solid fa-magnifying-glass"></i>
+
                         </div>
 
                         <ul class="contact-list">
-                            <li v-for="(contact, i) in filterName"
-                            @click="activeContacts(i)"
-                            
-                            
-                            :class="contact.visible !== true ? 'not-visible' : ''">
+                            <li v-for="(contact, i) in filterName" @click="activeContacts(i)"
+                                :class="contact.visible !== true ? 'not-visible' : ''">
                                 <div class="contact-card flex" :class="i === currentContactindex ? 'active' : ''">
                                     <div class="contact">
                                         <img class="avatar" :src="contact.avatar" alt="">
@@ -66,11 +64,11 @@
                                     <div class="contact-sidebar-info">
                                         <div class="contact-name">{{contact.name}}</div>
                                         <div class="contact-last-message">
-                                            {{contact.messages[currentIndex].message.slice(0, 30)}}
+                                            {{lastMessage(contact.messages).slice(0, 30)}}
                                         </div>
                                     </div>
                                     <div class="last-message-time">
-                                        {{contact.messages[currentIndex].date.slice(11, 16)}}
+                                        {{lastDate(contact.messages).slice(11, 16)}}
                                     </div>
                                 </div>
                             </li>
@@ -97,45 +95,45 @@
                                 </div>
                                 <div class="avatar-info">
                                     <div class="avatar-name">{{ currentContact.name }}</div>
-                        <ul class="block-message">
-                                    <div class="avatar-last-access">Ultimo accesso il 
-                                        {{ currentContact.messages[currentIndex].date.slice(0, 10) }}
-                                         alle 
-                                        {{ currentContact.messages[currentIndex].date.slice(11, 16) }}
+                                    
+                                    <div class="block-message">
+                                        <div class="avatar-last-access">Ultimo accesso oggi alle {{ randomTime() }}</div>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="main-tools">
-                                <ul class="flex">
-                                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></a></i></li>
-                                    <li><a href="#"><i class="fa-solid fa-paperclip"></a></i></li>
-                                    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></a></i></li>
-                                </ul>
+                                <div class="main-tools">
+                                    <ul class="flex">
+                                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></a></i></li>
+                                        <li><a href="#"><i class="fa-solid fa-paperclip"></a></i></li>
+                                        <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></a></i></li>
+                                    </ul>
+                                </div>
                             </div>
 
                         </div>
                     </section>
 
                     <section class="chat-area">
-                        <ul class="block-message">
-                            <li v-for="(messageObject, i) in currentContact.messages"
-                                :class="messageObject.status">
-                                <div>{{messageObject.message}}</div>
-                                <div class="text-menu">
-                                    <div class="dropdown">
-                                        <a href="#"><i class="fa-solid fa-angle-down"></i></a>
-                                        <div class="dropdown-content">
-                                            <p><a href="#" @click="removeMessage(i)">cancella</a></p>
-                                            <p><a href="#">condividi</a></p>
-                                            <p><a href="#">modifica</a></p>
+                        <ul class="block-message" v-if="currentContact.messages.length !== 0">
+                            <li class="block-message">
+                                <div v-for="(messageObject, i) in currentContact.messages"
+                                    :class="messageObject.status">
+                                    {{messageObject.message}}
+                                    <div class="text-menu">
+                                        <div class="dropdown">
+                                            <a href="#"><i class="fa-solid fa-angle-down"></i></a>
+                                            <div class="dropdown-content">
+                                                <p><a href="#" @click="removeMessage(i)">cancella</a></p>
+                                                <p><a href="#">condividi</a></p>
+                                                <p><a href="#">modifica</a></p>
 
+                                            </div>
                                         </div>
+                                        <span class="timing">{{lastDate(currentContact.messages).slice(11, 16) }}</span>
                                     </div>
-                                    <span class="timing">{{ messageObject.date.slice(11, 16) }}</span>
                                 </div>
                             </li>
                         </ul>
-
 
                     </section>
 
